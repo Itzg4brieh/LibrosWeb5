@@ -3,13 +3,13 @@ services:
   app:
     container_name: appLibrosWeb
     ports:
-      "8080:8080"
+      - "8080:8080"
     build: .
     restart: unless-stopped
     links:
         - mymongodb
     volumes:
-        - .:usr/src/app
+        - .:/usr/src/app
   mymongodb:
     container_name: mymongodatabase
     image: mongo
